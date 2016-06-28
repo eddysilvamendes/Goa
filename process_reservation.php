@@ -35,6 +35,10 @@ if (!$errors && !$missing) {
     $replacements = [
         'edilson.mendes@primeconsulting.org'  =>
             ['#subject#' => 'Pedido de Reserva RESIDENCIAL GOA']
+
+        $email =>
+            ['#subject#' => 'RESIDENCIAL GOA Reservation Request',
+                '#greeting#' => "Thanks $nome, your booking request was received!"]
    ];
 
     try {
@@ -124,7 +128,7 @@ EOT;
         }
 
         // if the message have been sent, redirect to relevant page
-        if ($sent == 1) {
+        if ($sent == 2) {
             header('Location: index.html');
             exit;
         }
